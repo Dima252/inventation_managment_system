@@ -1,14 +1,17 @@
 // backend/src/app.module.ts
 
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config'; // <--- 1. Import this
 import { GuestModule } from './modules/guests/guest.module';
-// Later, we will add WhatsappModule here too!
+import { WhatsappModule } from './modules/whatsapp/whatsapp.module';
 
 @Module({
-    // 1. We PLUG IN the feature modules here
-    imports: [GuestModule],
-
-    // 2. We leave these EMPTY in the root module
+    imports: [
+        // 2. Add ConfigModule.forRoot() at the very top of your imports
+        ConfigModule.forRoot({ isGlobal: true }),
+        GuestModule,
+        WhatsappModule
+    ],
     controllers: [],
     providers: [],
 })
