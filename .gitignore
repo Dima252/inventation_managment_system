@@ -1,0 +1,25 @@
+# 1. DEPENDENCIES (The massive folders breaking your Git push)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# 2. NEXT.JS BUILD FOLDERS (Frontend)
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# 3. NESTJS BUILD FOLDERS (Backend)
+backend/dist/
+
+# 4. YOUR LOCAL DATABASE (CRITICAL: Keeps your guests' phone numbers private!)
+backend/data/guest_state.json
+backend/data/
+
+# 5. ENVIRONMENT VARIABLES (Keep API keys out of Git)
+.env
+.env.local
+.env.*
+
+# 6. SYSTEM JUNK
+.DS_Store
+Thumbs.db
